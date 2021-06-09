@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.drum-container {
+  width: 500px;
+  margin: 200px auto;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+}
+
+.drum-btn {
+  width: 70px;
+  height: 70px;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.4s ease-in-out;
+}
+
+.active {
+  background: #e91e63;
+}
