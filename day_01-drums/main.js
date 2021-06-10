@@ -17,13 +17,10 @@ function pressedbtn(event){
   if(sounds.hasOwnProperty(`${keynum}`)) {
   		let buttonSound = new Audio(`sounds/${sounds[`${keynum}`]}`);
 			buttonSound.play();
-
-			/*drumButtons.forEach((ele) => {
-			ele.classList.remove("active");
-		})*/
-
-		document.getElementById(`drum-btn-${keynum}`).classList.add("active");
+			buttonSound.currentTime = 0;
   }
+
+  document.getElementById(`drum-btn-${keynum}`).classList.add("active");
 
 }
 
@@ -37,18 +34,17 @@ function clickedBtn(event){
 
 }
 
-function animationFinish() {
-	drumButtons.forEach((ele) => {
+function animationFinish(ele) {
+	drumButtons.forEach(ele => {
 		ele.classList.remove("active");
 	})
 }
 
 
 drumButtons.forEach(function(btn){
-
-	document.onkeypress = pressedbtn;
-	btn.onclick = clickedBtn;
-	btn.ontransitionend = animationFinish;
-	
-
+	btn.addEventListener('click', clickedBtn);
+	btn.addEventListener('transitionend', animationFinish);
 });
+
+document.addEventListener('keypress', pressedbtn);
+
