@@ -25,9 +25,9 @@ ul {
 }
 
 .clock-hour {
-  width: 0px;
+  width: 5px;
   height: 60px;
-  background: #222;
+  background: transparent;
   position: absolute;
   transform-origin: left;
   left: calc(50% - 0px);
@@ -36,52 +36,51 @@ ul {
   transform-origin: top;
 }
 
-.clock-hour:nth-of-type(2){
+.clock-hour:nth-of-type(2) {
   transform: translate(-50%) rotate(-150deg);
 }
 
-.clock-hour:nth-of-type(3){
+.clock-hour:nth-of-type(3) {
   transform: translate(-50%) rotate(-120deg);
 }
 
-.clock-hour:nth-of-type(4){
+.clock-hour:nth-of-type(4) {
   transform: translate(-50%) rotate(-90deg);
 }
 
-.clock-hour:nth-of-type(5){
+.clock-hour:nth-of-type(5) {
   transform: translate(-50%) rotate(-60deg);
 }
 
-.clock-hour:nth-of-type(6){
+.clock-hour:nth-of-type(6) {
   transform: translate(-50%) rotate(-30deg);
 }
 
-.clock-hour:nth-of-type(7){
+.clock-hour:nth-of-type(7) {
   transform: translate(-50%) rotate(0deg);
 }
 
-.clock-hour:nth-of-type(8){
+.clock-hour:nth-of-type(8) {
   transform: translate(-50%) rotate(30deg);
 }
 
-.clock-hour:nth-of-type(9){
+.clock-hour:nth-of-type(9) {
   transform: translate(-50%) rotate(60deg);
 }
 
-.clock-hour:nth-of-type(10){
+.clock-hour:nth-of-type(10) {
   transform: translate(-50%) rotate(90deg);
 }
 
-.clock-hour:nth-of-type(11){
+.clock-hour:nth-of-type(11) {
   transform: translate(-50%) rotate(120deg);
 }
 
-.clock-hour:nth-of-type(12){
+.clock-hour:nth-of-type(12) {
   transform: translate(-50%) rotate(150deg);
 }
 
-
-.clock-hour::after{
+.clock-hour::after {
   content: "";
   display: block;
   height: 5px;
@@ -90,4 +89,27 @@ ul {
   top: 65px;
   left: 0px;
   background: #ddd;
+}
+
+.clockwise {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transform: translate(0, -150px);
+  padding: 0;
+  margin: 0;
+}
+
+.clockwise .hours,
+.clockwise .mins,
+.clockwise .secs {
+  position: absolute;
+  width: 5px;
+  height: 59px;
+  background: #000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 0) rotate(0deg);
+  transform-origin: top;
 }
