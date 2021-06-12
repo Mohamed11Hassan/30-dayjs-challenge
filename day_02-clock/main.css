@@ -20,73 +20,43 @@ ul {
 
 .clock-num {
   position: absolute;
-  width: 5px;
+  width: 1px;
   height: 5px;
   background: #000;
   left: 50%;
   transform: translate(-50%, 0px);
   top: 0;
-}
-
-.clock-num:nth-of-type(2) {
-  transform: translate(-50%, 0px) rotate(30deg);
   transform-origin: 50% 70px;
 }
 
-.clock-num:nth-of-type(3) {
-  transform: translate(-50%, 0px) rotate(60deg);
-  transform-origin: 50% 70px;
+.clock-num:nth-of-type(5),
+.clock-num:nth-of-type(20),
+.clock-num:nth-of-type(35),
+.clock-num:nth-of-type(50) {
+  width: 3px;
+  height: 10px;
 }
 
-.clock-num:nth-of-type(4) {
-  transform: translate(-50%, 0px) rotate(90deg);
-  transform-origin: 50% 70px;
+.center-point {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #111;
+  z-index: 10;
 }
 
-.clock-num:nth-of-type(5) {
-  transform: translate(-50%, 0px) rotate(120deg);
-  transform-origin: 50% 70px;
-}
-
-.clock-num:nth-of-type(6) {
-  transform: translate(-50%, 0px) rotate(150deg);
-  transform-origin: 50% 70px;
-}
-
-.clock-num:nth-of-type(7) {
-  transform: translate(-50%, 0px) rotate(180deg);
-  transform-origin: 50% 70px;
-}
-
-.clock-num:nth-of-type(7)::after {
-  content: "6";
-  transform: translate(1px, 5px) rotate(180deg);
-  display: block;
-}
-
-.clock-num:nth-of-type(8) {
-  transform: translate(-50%, 0px) rotate(210deg);
-  transform-origin: 50% 70px;
-}
-
-.clock-num:nth-of-type(9) {
-  transform: translate(-50%, 0px) rotate(240deg);
-  transform-origin: 50% 70px;
-}
-
-.clock-num:nth-of-type(10) {
-  transform: translate(-50%, 0px) rotate(270deg);
-  transform-origin: 50% 70px;
-}
-
-.clock-num:nth-of-type(11) {
-  transform: translate(-50%, 0px) rotate(300deg);
-  transform-origin: 50% 70px;
-}
-
-.clock-num:nth-of-type(12) {
-  transform: translate(-50%, 0px) rotate(330deg);
-  transform-origin: 50% 70px;
+.sec-hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #de5c5c;
+  width: 2px;
+  height: 49px;
+  transform-origin: top;
 }
 
 .no-transition {

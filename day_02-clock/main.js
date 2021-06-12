@@ -1,43 +1,36 @@
-/*let secsWise = document.getElementById('secs-wise'),
-	minsWise = document.getElementById('mins-wise'),
-	hoursWise = document.getElementById('hours-wise');*/
+let clockBody = document.getElementById('clock-body');
+	
+for(let i = 1;i <= 60;i++){
+	clockBody.appendChild(document.createElement('div')).setAttribute('class', 'clock-num');
+}
 
-	/*let dateObj2 = new Date(),
+let clockNumbers = [...document.querySelectorAll('.clock-num')];
+
+
+for(let i = 0;i <= 59;i++){
+	clockNumbers[i].style.cssText = `transform: translate(-50%, 0) rotate(${i * 6}deg)`;
+}
+
+let secHand = document.getElementById('secHand');
+
+	let dateObj2 = new Date(),
 	secs2 = dateObj2.getUTCSeconds(),
 	mins2 = dateObj2.getUTCMinutes(),
 	hours2 = ((dateObj2.getUTCHours() + 2) % 12);
 
-	secsWise.style.cssText = `transform: translate(-50%, 0) rotate(${6 * secs2}deg)`;
-	minsWise.style.cssText = `transform: translate(-50%, 0) rotate(${6 * mins2}deg)`;
-	hoursWise.style.cssText = `transform: translate(-50%, 0) rotate(${30 * hours2}deg)`;
+	secHand.style.cssText = `transform: translate(-50%, 0) rotate(${(6 * secs2) + 180}deg)`;
 
 setInterval(() => {
 	let dateObj = new Date(),
 	secs = dateObj.getUTCSeconds(),
 	mins = dateObj.getUTCMinutes(),
 	hours = ((dateObj.getUTCHours() + 2) % 12);
+
 	if(secs == 0) {
-		secsWise.classList.add('no-transition');
-	} else {
-		secsWise.classList.remove('no-transition');
+		secHand.style.cssText='transition: none';
 	}
 
-	if(mins == 0) {
-		minsWise.classList.add('no-transition');
-	} else {
-		minsWise.classList.remove('no-transition');
-	}
+	secHand.style.cssText = `transform: translate(-50%, 0) rotate(${(6 * secs) + 180}deg);transition: all 0.6s cubic-bezier(0.9, 0, 0, 1) 0s`;
 
-	if(hours == 0) {
-		hoursWise.classList.add('no-transition');
-	} else {
-		hoursWise.classList.remove('no-transition');
-	}
-
-	secsWise.style.cssText = `transform: translate(-50%, 0) rotate(${6 * secs}deg)`;
-	minsWise.style.cssText = `transform: translate(-50%, 0) rotate(${6 * mins}deg)`;
-	hoursWise.style.cssText = `transform: translate(-50%, 0) rotate(${30 * hours}deg)`;
-}, 1000);*/
-
-
+}, 1000);
 
