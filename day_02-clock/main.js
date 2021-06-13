@@ -22,7 +22,7 @@ let secHand = document.getElementById('secHand'),
 
 	secHand.style.cssText = `transform: translate(0%, -50%) rotate(${((secs2 / 60) * 360) + 90}deg)`;
 	minHand.style.cssText = `transform: translate(0%, -50%) rotate(${((mins2 / 60) * 360) + 90}deg)`;
-	hourHand.style.cssText = `transform: translate(0%, -50%) rotate(${((hours2 / 60) * 360) + 90}deg)`;
+	hourHand.style.cssText = `transform: translate(0%, -50%) rotate(${((hours2 / 12) * 360) + 90 + ((mins2 / 60) * 30)}deg)`;
 
 setInterval(() => {
 	let dateObj = new Date(),
