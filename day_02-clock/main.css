@@ -49,14 +49,33 @@ ul {
   z-index: 10;
 }
 
-.sec-hand {
+.sec-hand,
+.min-hand,
+.hour-hand {
   position: absolute;
   top: 50%;
-  left: 50%;
   background: #de5c5c;
-  width: 2px;
-  height: 49px;
-  transform-origin: top;
+  width: 40%;
+  height: 2px;
+  transform-origin: 100%;
+  transform: translate(0, -50%) rotate(90deg);
+  right: 0;
+  left: 10%;
+  z-index: 5;
+}
+
+.min-hand {
+  background: #444;
+  width: 37%;
+  height: 3px;
+  left: 13%;
+}
+
+.hour-hand {
+  background: #444;
+  width: 35%;
+  height: 4px;
+  left: 15%;
 }
 
 .no-transition {
