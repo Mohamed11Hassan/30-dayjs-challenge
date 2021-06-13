@@ -48,7 +48,7 @@ setInterval(() => {
 	}
 
 	// handling the mins clock hand rotation 
-	if(mins == 0) {
+	if(mins == 0 && secs == 0) {
 
 		minHand.style.transition = 'all 0.6s cubic-bezier(0.9, 0, 0, 1) 0s';
 		minHand.style.transform = `translate(0%, -50%) rotate(${450}deg)`;
@@ -58,9 +58,23 @@ setInterval(() => {
 			minHand.style.transform = `translate(0%, -50%) rotate(${90}deg)`;
 		}, 610);
 
-	} else if(mins != 0){
+	} else {
 		minHand.style.transform = `translate(0%, -50%) rotate(${((mins / 60) * 360) + 90}deg)`;
 		minHand.style.transition = 'all 0.6s cubic-bezier(0.9, 0, 0, 1) 0s';
+	}
+
+	if(hours == 0 && secs == 0) {
+		hourHand.style.transition = 'all 0.6s cubic-bezier(0.9, 0, 0, 1) 0s';
+		hourHand.style.transform = `translate(0%, -50%) rotate(${450}deg)`;
+
+		setTimeout(function() {
+			hourHand.style.transition = 'none';
+			hourHand.style.transform = `translate(0%, -50%) rotate(${90}deg)`;
+		}, 610);
+
+	} else {
+		hourHand.style.transition = 'all 0.6s cubic-bezier(0.9, 0, 0, 1) 0s';
+		hourHand.style.cssText = `transform: translate(0%, -50%) rotate(${((hours2 / 12) * 360) + 90 + ((mins2 / 60) * 30)}deg)`;
 	}
 
 }, 1000);
